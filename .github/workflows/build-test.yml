@@ -12,8 +12,10 @@ jobs:
       
       - name: Docker installieren
         run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io
+          15| sudo apt-get update
+          16| sudo apt-get install -y ca-certificates curl gnupg
+          17| curl -fsSL https://get.docker.com -o get-docker.sh
+          18| sh get-docker.sh
       
       - name: Docker-Image bauen
         run: docker build -t oldschool-demo-image-${{ github.run_number }} .
